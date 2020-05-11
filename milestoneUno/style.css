@@ -1,0 +1,10 @@
+/* regole generali */
+*{
+    box-sizing: border-box;
+    padding: 0;
+    margin: 0;
+}
+.venditeMensili{
+    width: 1000px;
+    height: 1000px;
+}
