@@ -49,11 +49,11 @@
         "typeTeam" => $typeTeam,
         "accessTeam" => $accessTeam,
         "teamNumber" => $teamNumber,
-        "dataTeam" => $dataTeam
+        "dataTeam" => $dataTeam,
+        "level" => $_GET["level"]
     ];
     //  echo '<pre>',print_r ($dataTeam[1]),'</pre>';
     //  echo '<pre>',print_r ($teamNumber[0]),'</pre>';
-
 
     // echo '<pre>',print_r ($graphs),'</pre>';
     echo json_encode($graphs);

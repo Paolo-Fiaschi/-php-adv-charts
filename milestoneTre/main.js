@@ -79,7 +79,7 @@ $(document).ready(function (){
                     }
                 }
             });
-           console.log(data);
+        //    console.log(data);
         },
         error: function (error){
             console.log(error);
@@ -120,7 +120,7 @@ $(document).ready(function (){
                     }
                 }
             });
-           console.log(data);
+        //    console.log(data);
         },
         error: function (error){
             console.log(error);
@@ -138,7 +138,7 @@ $(document).ready(function (){
             var firstTeam = fullData.teamNumber[0];
             var secondTeam = fullData.teamNumber[1];
             var thirdTeam = fullData.teamNumber[2];
-            console.log(dataFirst, dataSecond, dataThird);
+            // console.log(dataFirst, dataSecond, dataThird);
             
             var salesChart = new Chart(fatturatoTeam, {
                 type: typeGraph,
