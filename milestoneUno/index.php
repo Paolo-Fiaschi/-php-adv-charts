@@ -6,7 +6,7 @@
     <link rel="stylesheet" href="style.css">
     <script src="https://cdn.jsdelivr.net/npm/chart.js@2/dist/Chart.min.js"></script>
     
-    <title>Document</title>
+    <title>Charts</title>
 </head>
 <body>
 

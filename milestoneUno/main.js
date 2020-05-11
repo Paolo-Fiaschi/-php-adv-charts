@@ -2,9 +2,9 @@ $(document).ready(function (){
     var months = [];
     for (var i = 0; i < moment.months().length; i++) {
         months.push(moment.months()[i]);
-        console.log(months);
+        // console.log(months);
     };
-    console.log(months);
+    // console.log(months);
     
     var ctx = $('#salesChart');
     $.ajax({
