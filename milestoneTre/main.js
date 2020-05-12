@@ -17,6 +17,7 @@ $(document).ready(function (){
             var typeGraph = fullData.typeFatturato;
             var data = fullData.dataFatturato;
             if (resultLevel == access || resultLevel == fullData.accessFatturatoAgenti || resultLevel == fullData.accessTeam) {
+                $(".venditeMensili").css("display", 'block');
                 var salesChart = new Chart(ctx, {
                     type: typeGraph,
                     data: {
@@ -102,6 +103,7 @@ $(document).ready(function (){
             var data = fullData.dataFatturatoAgenti;
             var nameAgents = fullData.agentiName;
             if (resultLevel == access || resultLevel == fullData.accessTeam) {
+                $(".fatturatoAgenti").css("display", 'block');
                 var salesChart = new Chart(fatturatoAgenti, {
                     type: typeGraph,
                     data: {
@@ -153,6 +155,7 @@ $(document).ready(function (){
             var thirdTeam = fullData.teamNumber[2];
             // console.log(dataFirst, dataSecond, dataThird);
             if (resultLevel == access) {
+                $(".fatturatoTeam").css("display", 'block');
                 var salesChart = new Chart(fatturatoTeam, {
                     type: typeGraph,
                     data: {
