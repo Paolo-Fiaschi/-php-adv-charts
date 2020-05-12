@@ -14,8 +14,24 @@
 <body>
 
     <section id="container">
+    <section id="container">
+        <div class="venditeMensili">
+            <h1>Andamento mensile delle vendite</h1>
+            <canvas id="salesChart">
+            </canvas>
+        </div>
+        <div class="fatturatoAgenti">
+            <h1>Fatturato Agenti</h1>
+            <canvas id="salesAgents">
+            </canvas>
+        </div>
+        <div class='fatturatoTeam'>
+            <h1>Fatturato Team</h1>
+            <canvas id='salesTeam'>
+            </canvas>
+        </div>
         
-        <?php 
+        <!-- <?php 
             if ($getAccess == "guest" || $getAccess == "employee" || $getAccess == "clevel") {
 
                 echo "<div class='venditeMensili'>
@@ -39,7 +55,7 @@
                 </div>";
     
             };
-        ?>
+        ?> -->
         
 
     </section>

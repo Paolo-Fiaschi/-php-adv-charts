@@ -4,40 +4,39 @@
     require_once "database.php"; 
 
     // GRAFICO 1 - FATTURATO - 
-    foreach ($graphs as $k => $graph) {
-        if ($k == "fatturato") {
-           $typeFatturato = $graph["type"];
-           $accessFatturato = $graph["access"];
-           foreach ($graph["data"] as $datavalue) {
+    
+           $typeFatturato = $graphs["fatturato"]['type'];
+           $accessFatturato = $graphs["fatturato"]['access'];
+           foreach ($graphs["fatturato"]['data'] as $datavalue) {
                $dataFatturato[] = $datavalue;
             };
         //     echo $typeFatturato;
         //    echo '<pre>',print_r ($dataFatturato),'</pre>';
         //    echo "<br>-----------------<br>";
         //    print_r ($dataFatturato[$datavalue]);
-        }
-        if ($k == "fatturato_by_agent"){
+        
+       
             // print_r ($graph["type"]. "<br>");
-            $typeFatturatoAgenti = $graph["type"];
-            $accessFatturatoAgenti = $graph["access"];
+            $typeFatturatoAgenti = $graphs["fatturato_by_agent"]['type'];
+            $accessFatturatoAgenti = $graphs["fatturato_by_agent"]['access'];
             // echo $typeFatturatoAgenti;
-            foreach ($graph["data"] as $key => $datavalue) {
+            foreach ($graphs["fatturato_by_agent"]['data'] as $key => $datavalue) {
                 $agentiName[] = $key;
                 // echo $agentiName;
                 $dataFatturatoAgenti[] =  $datavalue;
             }
             // echo '<pre>',print_r ($dataFatturatoAgenti),'</pre>';
-        }
-        if ($k == 'team_efficiency') {
-            $typeTeam = $graph["type"];
-            $accessTeam = $graph["access"];
-            foreach ($graph["data"] as $key => $datavalue) {
+        
+        
+            $typeTeam = $graphs["team_efficiency"]['type'];
+            $accessTeam = $graphs["team_efficiency"]['access'];
+            foreach ($graphs["team_efficiency"]['data'] as $key => $datavalue) {
                 $teamNumber[] = $key;
                 // echo $agentiName;
                 $dataTeam[] =  $datavalue;
             }
-        }
-    };
+        
+    
     $graphs = [
         "typeFatturato" => $typeFatturato,
         "dataFatturato" => $dataFatturato,

@@ -1,11 +1,10 @@
 $(document).ready(function (){
-    var months = [];
-    for (var i = 0; i < moment.months().length; i++) {
-        months.push(moment.months()[i]);
-        // console.log(months);
-    };
-    // console.log(months);
-    
+    function getMonths(){
+        return moment.months();
+    }
+    moment.locale('it');
+    var months = getMonths();
+    $.get()
     var ctx = $('#salesChart');
     $.ajax({
         url: "server.php",
