@@ -317,37 +317,22 @@ $(document).ready(function (){
         }
     }
     var ctx = $('#salesChart');
-    $.ajax({
-        url: "server.php",
-        success: function (fullData) {
-            printLineChart(fullData);
-        //    console.log(data);
-        },
-        error: function (error){
-            console.log(error);
-        }
-    });
     var fatturatoAgenti = $('#salesAgents');
-    $.ajax({
-        url: "server.php",
-        success: function (fullData) {
-            printPieChart(fullData);
-        //    console.log(data);
-        },
-        error: function (error){
-            console.log(error);
-        }
-    });
     var fatturatoTeam = $('#salesTeam');
-    $.ajax({
-        url: "server.php",
-        success: function (fullData) {
-            printMultilineChart(fullData);
-        //    console.log(data);
-        },
-        error: function (error){
-            console.log(error);
-        }
-    });
+    function callAjax(printFunction) {
+        $.ajax({
+            url: "server.php",
+            success: function (fullData) {
+                printFunction(fullData);
+            //    console.log(data);
+            },
+            error: function (error){
+                console.log(error);
+            }
+        });    
+    }
+    callAjax(printLineChart);
+    callAjax(printPieChart);
+    callAjax(printMultilineChart);
     
 });
