@@ -29,35 +29,7 @@
             <h1>Fatturato Team</h1>
             <canvas id='salesTeam'>
             </canvas>
-        </div>
-        
-        <!-- <?php 
-            if ($getAccess == "guest" || $getAccess == "employee" || $getAccess == "clevel") {
-
-                echo "<div class='venditeMensili'>
-                <h1>Andamento mensile delle vendite</h1>
-                <canvas id='salesChart'>
-                </canvas>
-                </div>";
-            };
-            if ($getAccess == "employee" || $getAccess == "clevel") {
-                echo "<div class='fatturatoAgenti'>
-                <h1>Fatturato Agenti</h1>
-                <canvas id='salesAgents'>
-                </canvas>
-                </div>";
-            };
-            if ($getAccess == "clevel") {
-                echo "<div class='fatturatoTeam'>
-                <h1>Fatturato Team</h1>
-                <canvas id='salesTeam'>
-                </canvas>
-                </div>";
-    
-            };
-        ?> -->
-        
-
+        </div>        
     </section>
     <script src="lib/moment/moment.min.js"></script>
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
