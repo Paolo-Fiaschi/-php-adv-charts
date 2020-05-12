@@ -12,7 +12,10 @@ $(document).ready(function (){
     };
     var resultLevel = $.urlParam('level');    
     function printLineChart(fullData){
+        // var fullData = fullData.guest;
+        console.log(fullData);
         var access = fullData.accessFatturato;
+        console.log(access);
         var typeGraph = fullData.typeFatturato;
         var data = fullData.dataFatturato;
         if (resultLevel == access || resultLevel == fullData.accessFatturatoAgenti || resultLevel == fullData.accessTeam) {
@@ -89,6 +92,8 @@ $(document).ready(function (){
         }
     }
     function printPieChart(fullData) {
+        // var fullData = fullData.employee;
+        console.log(fullData)
         var access = fullData.accessFatturatoAgenti;
         var typeGraph = fullData.typeFatturatoAgenti;
         var data = fullData.dataFatturatoAgenti;
@@ -128,6 +133,8 @@ $(document).ready(function (){
         }
     }
     function printMultilineChart(fullData) {
+        // var fullData = fullData.clevel;
+        console.log(fullData);
         var typeGraph = fullData.typeTeam;
         var dataFirst = fullData.dataTeam[0];
         var dataSecond = fullData.dataTeam[1];
@@ -322,7 +329,12 @@ $(document).ready(function (){
     function callAjax(printFunction) {
         $.ajax({
             url: "server.php",
+            data: {
+                level : resultLevel
+            },
             success: function (fullData) {
+                console.log("valore di success", fullData);
+
                 printFunction(fullData);
             //    console.log(data);
             },
@@ -331,8 +343,17 @@ $(document).ready(function (){
             }
         });    
     }
-    callAjax(printLineChart);
-    callAjax(printPieChart);
-    callAjax(printMultilineChart);
+    if (resultLevel == 'guest') {
+        callAjax(printLineChart);
+        
+    }else if (resultLevel == 'employee') {
+        callAjax(printPieChart);
+        callAjax(printLineChart);
+
+    }else if (resultLevel == 'clevel') {
+        callAjax(printMultilineChart);
+        callAjax(printPieChart);
+        callAjax(printLineChart);
+    }
     
 });

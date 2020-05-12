@@ -36,24 +36,49 @@
         $dataTeam[] =  $datavalue;
     }
         
-    
-    $graphs = [
-        "typeFatturato" => $typeFatturato,
-        "dataFatturato" => $dataFatturato,
-        "accessFatturato" => $accessFatturato,
-        "typeFatturatoAgenti" => $typeFatturatoAgenti,
-        "dataFatturatoAgenti" => $dataFatturatoAgenti,
-        "accessFatturatoAgenti" => $accessFatturatoAgenti,
-        "agentiName" => $agentiName,
-        "typeTeam" => $typeTeam,
-        "accessTeam" => $accessTeam,
-        "teamNumber" => $teamNumber,
-        "dataTeam" => $dataTeam,
-        "level" => $_GET["level"]
-    ];
+    $level = $_GET["level"];
     //  echo '<pre>',print_r ($dataTeam[1]),'</pre>';
     //  echo '<pre>',print_r ($teamNumber[0]),'</pre>';
 
-    // echo '<pre>',print_r ($graphs),'</pre>';
-    echo json_encode($graphs);
+    $res = [];
+
+    // level = guest
+
+    if ($level == 'guest') {
+
+        $res = [
+            "typeFatturato" => $typeFatturato,
+            "dataFatturato" => $dataFatturato,
+            "accessFatturato" => $accessFatturato,
+            "level" => $level
+ 
+        ];
+    }elseif ($level == 'employee') {
+        $res = [
+            "typeFatturato" => $typeFatturato,
+            "dataFatturato" => $dataFatturato,
+            "accessFatturato" => $accessFatturato,
+            "typeFatturatoAgenti" => $typeFatturatoAgenti,
+            "dataFatturatoAgenti" => $dataFatturatoAgenti,
+            "accessFatturatoAgenti" => $accessFatturatoAgenti,
+            "agentiName" => $agentiName    
+        ];
+    }elseif ($level == 'clevel') {
+        $res = [
+            "typeFatturato" => $typeFatturato,
+            "dataFatturato" => $dataFatturato,
+            "accessFatturato" => $accessFatturato,
+            "typeFatturatoAgenti" => $typeFatturatoAgenti,
+            "dataFatturatoAgenti" => $dataFatturatoAgenti,
+            "accessFatturatoAgenti" => $accessFatturatoAgenti,
+            "agentiName" => $agentiName,
+            "typeTeam" => $typeTeam,
+            "accessTeam" => $accessTeam,
+            "teamNumber" => $teamNumber,
+            "dataTeam" => $dataTeam    
+        ];
+    }
+
+    // echo '<pre>',print_r ($res),'</pre>';
+    echo json_encode($res);
 ?>
