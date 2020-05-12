@@ -1,4 +1,5 @@
 $(document).ready(function (){
+    moment.locale('it');
     var months = [];
     for (var i = 0; i < moment.months().length; i++) {
         months.push(moment.months()[i]);

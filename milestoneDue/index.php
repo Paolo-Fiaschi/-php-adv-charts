@@ -17,7 +17,7 @@
             </canvas>
         </div>
         <div class="fatturatoAgenti">
-        <h1>Fatturato Agenti</h1>
+            <h1>Fatturato Agenti</h1>
             <canvas id="salesAgents">
             </canvas>
         </div>
