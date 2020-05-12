@@ -326,7 +326,7 @@ $(document).ready(function (){
     var ctx = $('#salesChart');
     var fatturatoAgenti = $('#salesAgents');
     var fatturatoTeam = $('#salesTeam');
-    function callAjax(printFunction) {
+ 
         $.ajax({
             url: "server.php",
             data: {
@@ -335,25 +335,25 @@ $(document).ready(function (){
             success: function (fullData) {
                 console.log("valore di success", fullData);
 
-                printFunction(fullData);
+                // printFunction(fullData);
+                if (resultLevel == 'guest') {
+                    printLineChart(fullData);
+                    
+                }else if (resultLevel == 'employee') {
+                    printPieChart(fullData);
+                    printLineChart(fullData);
+            
+                }else if (resultLevel == 'clevel') {
+                    printMultilineChart(fullData);
+                    printPieChart(fullData);
+                    printLineChart(fullData);
+                }
             //    console.log(data);
             },
             error: function (error){
                 console.log(error);
             }
         });    
-    }
-    if (resultLevel == 'guest') {
-        callAjax(printLineChart);
-        
-    }else if (resultLevel == 'employee') {
-        callAjax(printPieChart);
-        callAjax(printLineChart);
-
-    }else if (resultLevel == 'clevel') {
-        callAjax(printMultilineChart);
-        callAjax(printPieChart);
-        callAjax(printLineChart);
-    }
+    
     
 });
