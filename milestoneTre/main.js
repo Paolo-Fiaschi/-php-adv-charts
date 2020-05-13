@@ -315,33 +315,33 @@ $(document).ready(function (){
     var fatturatoAgenti = $('#salesAgents');
     var fatturatoTeam = $('#salesTeam');
  
-        $.ajax({
-            url: "server.php",
-            data: {
-                level : resultLevel
-            },
-            success: function (fullData) {
-                console.log("valore di success", fullData);
-
-                // printFunction(fullData);
-                if (resultLevel == fullData['accessFatturato']) {
-                    printLineChart(fullData);
-                    
-                }else if (resultLevel == fullData['accessFatturatoAgenti']) {
-                    printPieChart(fullData);
-                    printLineChart(fullData);
+    $.ajax({
+        url: "server.php",
+        data: {
+            level : resultLevel
+        },
+        success: function (fullData) {
+            console.log("valore di success", fullData);
             
-                }else if (resultLevel == fullData['accessTeam']) {
-                    printMultilineChart(fullData);
-                    printPieChart(fullData);
-                    printLineChart(fullData);
-                }
-            //    console.log(data);
-            },
-            error: function (error){
-                console.log(error);
+            // printFunction(fullData);
+            if (fullData['level'] == fullData['accessFatturato']) {
+                printLineChart(fullData);
+                
+            }else if (fullData['level'] == fullData['accessFatturatoAgenti']) {
+                printPieChart(fullData);
+                printLineChart(fullData);
+        
+            }else if (fullData['level'] == fullData['accessTeam']) {
+                printMultilineChart(fullData);
+                printPieChart(fullData);
+                printLineChart(fullData);
             }
-        });    
+        //    console.log(data);
+        },
+        error: function (error){
+            console.log(error);
+        }
+    });    
     
     
 });
