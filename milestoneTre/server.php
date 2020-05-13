@@ -61,7 +61,9 @@
             "typeFatturatoAgenti" => $typeFatturatoAgenti,
             "dataFatturatoAgenti" => $dataFatturatoAgenti,
             "accessFatturatoAgenti" => $accessFatturatoAgenti,
-            "agentiName" => $agentiName    
+            "agentiName" => $agentiName,
+            "level" => $level
+    
         ];
     }elseif ($level == 'clevel') {
         $res = [
@@ -75,7 +77,9 @@
             "typeTeam" => $typeTeam,
             "accessTeam" => $accessTeam,
             "teamNumber" => $teamNumber,
-            "dataTeam" => $dataTeam    
+            "dataTeam" => $dataTeam,
+            "level" => $level
+    
         ];
     }
 
