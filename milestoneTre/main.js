@@ -317,12 +317,54 @@ $(document).ready(function (){
  
     $.ajax({
         url: "server.php",
+        method: "GET",
         data: {
             level : resultLevel
         },
         success: function (fullData) {
             console.log("valore di success", fullData);
+
+            // per la struttura dati che abbiamo attualmente possiamo fare così
+            // so che se c'è i lgrafico 1 è presente la chiave accessFatturato
+            // so che se c'è il grafico 2 è presente la chiave accessFatturatoAgenti
+            // so che se c'è il grafico 3 è presente la chiave accessTeam
+
+            // allora verifico se la chiave è presente, e nel caso faccio vedere il relativo grafico
+
+            if ('accessFatturato' in fullData) {
+                // console.log('stampa 1');
+                printLineChart(fullData);
+            }
+            if ('accessFatturatoAgenti' in fullData) {
+                // console.log('stampa 1');
+                printPieChart(fullData);
+            }
+            if ('accessTeam' in fullData) {
+                // console.log('stampa 1');
+                printMultilineChart(fullData);
+            }
+
+
+            // if (Object.keys(fullData).includes('accessFatturatoAgenti')) {
+            //     console.log('stampa 2');
+            //     printPieChart(fullData);
+            // }
+
+            // if (fullData.accessTeam != undefined) {
+            //     console.log('stampa 3');
+            //     printMultilineChart(fullData);
+            // }
+
+            // for(var i = 0; i < fullData.length; i++) {
+
+            //     var grafico = fulldata[i];
+
+            //     if (grafico.type == 'line') {
+            //         // stampagrafico line
+            //     } else if (grafico.type == 'pie') {}
+            // }
             
+            /*
             // printFunction(fullData);
             if (fullData['level'] == fullData['accessFatturato']) {
                 printLineChart(fullData);
@@ -336,6 +378,7 @@ $(document).ready(function (){
                 printPieChart(fullData);
                 printLineChart(fullData);
             }
+            */
         //    console.log(data);
         },
         error: function (error){
