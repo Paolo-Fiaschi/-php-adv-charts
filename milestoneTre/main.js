@@ -1,5 +1,5 @@
 $(document).ready(function (){
-    
+
     moment.locale('it');
     // FUNZIONI
     function getMonths(){
@@ -10,7 +10,7 @@ $(document).ready(function (){
         var results = new RegExp('[\?&]' + level + '=([^&#]*)').exec(window.location.href);
         return results[1] || 0;
     };
-    var resultLevel = $.urlParam('level');    
+    var resultLevel = $.urlParam('level');
     function printLineChart(fullData){
         // var fullData = fullData['guest'];
         console.log(fullData);
@@ -85,7 +85,7 @@ $(document).ready(function (){
                 }
             }
         });
-            
+
     }
     function printPieChart(fullData) {
         // var fullData = fullData.employee;
@@ -122,7 +122,7 @@ $(document).ready(function (){
                 }
             }
         });
-        
+
     }
     function printMultilineChart(fullData) {
         // var fullData = fullData.clevel;
@@ -143,7 +143,7 @@ $(document).ready(function (){
                 labels: months,
                 datasets: [{
                     label: firstTeam,
-                    
+
                     data: dataFirst,
                     backgroundColor: [
                         'rgba(150, 33, 146, 1)',
@@ -309,12 +309,12 @@ $(document).ready(function (){
                     }]
                 }
             }
-        });    
+        });
     }
     var ctx = $('#salesChart');
     var fatturatoAgenti = $('#salesAgents');
     var fatturatoTeam = $('#salesTeam');
- 
+
     $.ajax({
         url: "server.php",
         method: "GET",
@@ -363,16 +363,16 @@ $(document).ready(function (){
             //         // stampagrafico line
             //     } else if (grafico.type == 'pie') {}
             // }
-            
+
             /*
             // printFunction(fullData);
             if (fullData['level'] == fullData['accessFatturato']) {
                 printLineChart(fullData);
-                
+
             }else if (fullData['level'] == fullData['accessFatturatoAgenti']) {
                 printPieChart(fullData);
                 printLineChart(fullData);
-        
+
             }else if (fullData['level'] == fullData['accessTeam']) {
                 printMultilineChart(fullData);
                 printPieChart(fullData);
@@ -384,7 +384,7 @@ $(document).ready(function (){
         error: function (error){
             console.log(error);
         }
-    });    
-    
-    
+    });
+
+
 });
